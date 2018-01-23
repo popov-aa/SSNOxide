@@ -707,7 +707,7 @@ namespace Oxide.Plugins
             int murders = m_playersMurders.ContainsKey(steamid) ? m_playersMurders[steamid] : 0;
             int deaths = m_playersDeaths.ContainsKey(steamid) ? m_playersDeaths[steamid] : 0;
             string score = "[" + murders.ToString() + "/" + deaths.ToString() + "]";
-            return "<color=" + color + ">" + SSNNotifier.Call<string>("PlayerName", steamid) + " " + score + "</color>";
+            return "<color=" + color + ">" + SSNNotifier.Call<string>("CustomOrRealPlayerName", steamid) + " " + score + "</color>";
         }
 
         bool IsPointInside(Position point)
