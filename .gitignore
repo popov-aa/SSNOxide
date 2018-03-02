@@ -1,3 +1,4 @@
 /.vs
 /.gitignore/*
 /SSNOxide.Rust.Plugins/obj/
+/SSNOxide.Rust.Plugins/bin/

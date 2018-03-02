@@ -11,6 +11,7 @@
     <AssemblyName>SSNOxide.Rust.Plugins</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -37,6 +40,7 @@
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
@@ -46,8 +50,10 @@
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="SSNVotes.cs" />
     <Compile Include="SSNEvent.cs" />
     <Compile Include="SSNGo.cs" />
     <Compile Include="SSNTeleport.cs" />
@@ -77,6 +83,9 @@
     <Reference Include="Facepunch.Rcon">
       <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.Rcon.dll</HintPath>
     </Reference>
+    <Reference Include="Facepunch.Sqlite">
+      <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.Sqlite.dll</HintPath>
+    </Reference>
     <Reference Include="Facepunch.Steamworks">
       <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.Steamworks.dll</HintPath>
     </Reference>
@@ -92,26 +101,32 @@
     <Reference Include="MySql.Data">
       <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Oxide.Core">
       <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Oxide.Core.CSharp">
-      <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.Core.CSharp.dll</HintPath>
+    <Reference Include="Oxide.CSharp">
+      <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Oxide.Core.MySql">
-      <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.Core.MySql.dll</HintPath>
+    <Reference Include="Oxide.Ext.Hive">
+      <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.Ext.Hive.dll</HintPath>
     </Reference>
-    <Reference Include="Oxide.Core.SQLite">
-      <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.Core.SQLite.dll</HintPath>
+    <Reference Include="Oxide.Ext.RustIO">
+      <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.Ext.RustIO.dll</HintPath>
     </Reference>
-    <Reference Include="Oxide.Core.Unity">
-      <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.Core.Unity.dll</HintPath>
+    <Reference Include="Oxide.MySql">
+      <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.MySql.dll</HintPath>
     </Reference>
-    <Reference Include="Oxide.Game.Rust">
-      <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.Game.Rust.dll</HintPath>
+    <Reference Include="Oxide.References">
+      <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.References.dll</HintPath>
+    </Reference>
+    <Reference Include="Oxide.Rust">
+      <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.Rust.dll</HintPath>
+    </Reference>
+    <Reference Include="Oxide.SQLite">
+      <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="Oxide.Unity">
+      <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.Unity.dll</HintPath>
     </Reference>
     <Reference Include="Rust.Data">
       <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Rust.Data.dll</HintPath>
@@ -125,6 +140,7 @@
     <Reference Include="Rust.Workshop">
       <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Rust.Workshop.dll</HintPath>
     </Reference>
+    <Reference Include="System" />
     <Reference Include="UnityEngine">
       <HintPath>..\..\steamcmd\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
