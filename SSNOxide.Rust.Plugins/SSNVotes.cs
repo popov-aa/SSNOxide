@@ -111,8 +111,6 @@ namespace Oxide.Plugins
         [ChatCommand("votes")]
         void cmdChatVotes(BasePlayer player, string command, string[] args)
         {
-            if (player.net.connection.authLevel == 0 && !permission.UserHasPermission(player.userID.ToString(), "SSNVotes.votes")) return;
-
             if (m_configData.votes.Count == 0)
             {
                 player.ChatMessage(m_configData.Messages["votes_not_found"]);
